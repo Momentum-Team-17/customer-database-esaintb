@@ -1,46 +1,50 @@
-//  customer name
-let customerDiv = document.createElement("container");
-customerDiv.classList.add("customer")
-let nameDiv = document.createElement("div");
-nameDiv.classList.add("name");
-nameDiv.innerText = `${customer.name.title} ${customer.name.first} ${customer.name.last}`;
-customerDiv.appendChild(nameDiv);
-container.appendChild(customerDiv);
+function showCustomerName(customerArray) {
+    for (let customer of customerArray) {
 
-// image
-let imageDive = document.createElement("img");
-imageDive.classList.add("image");
-imageDive.src = `${customer.picture.large}`;
-customerDiv.appendChild(imageDiv);
+        let customerDiv = document.createElement("div");
+        customerDiv.classList.add("customer")
+        let nameDiv = document.createElement("div");
+        nameDiv.classList.add("name");
+        nameDiv.innerText = `${customer.name.title} ${customer.name.first} ${customer.name.last}`;
+        customerDiv.appendChild(nameDiv);
+        container.appendChild(customerDiv);
 
-// email
-let emailDiv = document.createElement("div");
-emailDiv.classList.add("email");
-emailDiv.innerText = `${customer.email}`;
-customerDiv.appendChild(emailDiv);
+        // image
+        let imageDiv = document.createElement("img");
+        imageDiv.classList.add("image");
+        imageDiv.src = `${customer.picture.large}`;
+        customerDiv.appendChild(imageDiv);
 
-// street
-let streetDiv = document.createElement("div");
-streetDiv.classList.add("street");
-streetDiv.innerText = `${customer.location.street.number} ${customer.location.street.name}`;
-customerDiv.appendChild(streetDiv);
+        // email
+        let emailDiv = document.createElement("div");
+        emailDiv.classList.add("email");
+        emailDiv.innerText = `${customer.email}`;
+        customerDiv.appendChild(emailDiv);
 
-// state/zip
-let stateDiv = document.createElement("div");
-stateDiv.classList.add("state");
-stateDiv.innerText = `${customer.city} ${customer.state} ${customer.postcode}`;
-customerDiv.appendChild(stateDiv);
+        // street
+        let streetDiv = document.createElement("div");
+        streetDiv.classList.add("street");
+        streetDiv.innerText = `${customer.location.street.number} ${customer.location.street.name}`;
+        customerDiv.appendChild(streetDiv);
 
-
-// DOB
-let birthdayDiv = document.createElement("div");
-birthdayDiv.classlist.add("DOB");
-birthdayDiv.innerText = `${customer.dob.date}`;
-birthdayDiv.appendChild(birthdayDiv);
+        // state/zip
+        let stateDiv = document.createElement("div");
+        stateDiv.classList.add("state");
+        stateDiv.innerText = `${customer.city} ${customer.state} ${customer.postcode}`;
+        customerDiv.appendChild(stateDiv);
 
 
-// customer since date 
-let regDiv = document.createElement("div");
-regDiv.classList.add("Customer since");
-regDiv.innerText = `${customer.registered.date}`;
-regDiv.appendChild(regDiv);
+        // DOB
+        let birthdayDiv = document.createElement("div");
+        birthdayDiv.classlist.add("DOB");
+        birthdayDiv.innerText = `${customer.dob.date}`;
+        birthdayDiv.appendChild(birthdayDiv);
+
+
+        // customer since date 
+        let regDiv = document.createElement("div");
+        regDiv.classList.add("Customer since");
+        regDiv.innerText = `${customer.registered.date}`;
+        regDiv.appendChild(regDiv);
+    }
+}
